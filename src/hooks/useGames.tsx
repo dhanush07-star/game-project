@@ -1,7 +1,5 @@
-import { CanceledError } from "axios";
-import React, { useEffect, useState } from "react";
-import apiClient from '../services/api-client';
 import useData from "./useDate";
+import { Genre } from "./useGenres";
 
 
 
@@ -19,7 +17,7 @@ export interface Game{
   metacritic:number
 }
 
-const useGames = () => useData<Game>('/games');
+const useGames = (selectedGenre: Genre | null) => useData<Game>('/games',{params:{genres:selectedGenre?.id}},[selectedGenre?.id]);
 
 
 export default useGames;
