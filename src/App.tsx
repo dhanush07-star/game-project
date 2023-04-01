@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Button, ButtonGroup, Grid, GridItem, Show } from '@chakra-ui/react'
+import NavBar from './components/NavBar'
 
 function App() {
 
@@ -11,12 +12,11 @@ function App() {
       base:`"nav main"`,
       lg:`"nav nav" "aside main"`
     }} >
-      <GridItem area='nav'  bg='coral' >Nav</GridItem>
+      <GridItem area='nav' > <NavBar/> </GridItem>
       <Show above='lg' >
         <GridItem area='aside'  bg='gold' >aside</GridItem>
       </Show>
       <GridItem area='main'  bg='dodgerblue' >main</GridItem>
-      
     </Grid>
   )
 }
